@@ -520,6 +520,7 @@
     resize: none;
     min-height: 120px;
     line-height: 1.45;
+    overflow: hidden;
   }
 
   /* custom select */
@@ -969,6 +970,13 @@
   if (!form) return;
   const status = document.getElementById('form-status');
   const select = document.getElementById('f-pair');
+
+  // auto-grow textarea
+  const textarea = document.getElementById('f-msg');
+  textarea.addEventListener('input', () => {
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+  });
 
   // colour the select once a value is chosen
   select.addEventListener('change', () => {

@@ -1,0 +1,39 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "RATH — Hungarian · Polish · English Translation",
+  description:
+    "Professional translation between Hungarian, Polish, and English. Precision, nuance, and cultural fluency.",
+  openGraph: {
+    title: "RATH",
+    description:
+      "Professional translation between Hungarian, Polish, and English.",
+    url: "https://rath.rock",
+    siteName: "RATH",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RATH",
+    description:
+      "Professional translation between Hungarian, Polish, and English.",
+  },
+  metadataBase: new URL("https://rath.rock"),
+  icons: {
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>R</text></svg>",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className="bg-bg">
+      <body>{children}</body>
+    </html>
+  );
+}
